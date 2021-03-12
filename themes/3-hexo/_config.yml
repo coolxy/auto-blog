@@ -243,9 +243,9 @@ disqus:
 
 gitalk:
   githubID: coolxy
-  repo: coolxy_pl
-  ClientID: b4dba4c3b0267ee42557
-  ClientSecret: 8a15b3fee339f0c55e33f7cd02e4c399026411a5
+  repo: coolxy.github.io
+  ClientID: eded1d65c3a7dc421b72
+  ClientSecret: 52bb18daca0f96b49d35b2de5f8069ddf5e8bc04
   adminUser: coolxy
   distractionFreeMode: true
   language: zh-CN
