@@ -81,20 +81,19 @@ ___
 ## 6. 代码区块  
 语法：  
 单行用：  '`代码'` 实现  
-` for i in range(100):`
+` for i in range(100): `
 
 多行区块：  \`\`\`代码块\`\`\`  
 
 ```python
 for i in range(100):
     print(i,i**2)
-```
     i=100
     while i>0:
         i-=1
         print(i)   i-=1
         print(i)
-
+```
 
 ## 7. 链接  
  语法：  

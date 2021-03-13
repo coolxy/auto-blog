@@ -8,36 +8,36 @@ categories:
 tags: hexo
 ---
 
-# [使用hexo+github搭建免费个人博客详细教程](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html)
+# [使用hexo+github搭建免费个人博客详细教程](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html)
 
 
 
 目录
 
 - 前言
-  - [准备工作](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#准备工作)
+  - [准备工作](#准备工作)
 - 搭建github博客
-  - [创建仓库](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#创建仓库)
-  - [绑定域名](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#绑定域名)
+  - [创建仓库](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#创建仓库)
+  - [绑定域名](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#绑定域名)
 - 配置SSH key
-  - [测试是否成功](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#测试是否成功)
+  - [测试是否成功](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#测试是否成功)
 - 使用hexo写博客
-  - [hexo简介](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#hexo简介)
-  - [原理](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#原理)
-  - [注意事项](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#注意事项)
-  - [安装](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#安装)
-  - [初始化](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#初始化)
-  - [修改主题](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#修改主题)
-  - [上传之前](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#上传之前)
-  - [上传到github](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#上传到github)
-  - [保留CNAME、README.md等文件](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#保留cname、readmemd等文件)
-  - [常用hexo命令](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#常用hexo命令)
-  - [_config.yml](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#_configyml)
+  - [hexo简介](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#hexo简介)
+  - [原理](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#原理)
+  - [注意事项](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#注意事项)
+  - [安装](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#安装)
+  - [初始化](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#初始化)
+  - [修改主题](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#修改主题)
+  - [上传之前](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#上传之前)
+  - [上传到github](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#上传到github)
+  - [保留CNAME、README.md等文件](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#保留cname、readmemd等文件)
+  - [常用hexo命令](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#常用hexo命令)
+  - [_config.yml](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#_configyml)
   - 写博客
-    - [写博客工具](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#写博客工具)
-    - [如何让博文列表不显示全部内容](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#如何让博文列表不显示全部内容)
-- [最终效果](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#最终效果)
-- [参考](https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#参考)
+    - [写博客工具](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#写博客工具)
+    - [如何让博文列表不显示全部内容](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#如何让博文列表不显示全部内容)
+- [最终效果](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#最终效果)
+- [参考](https://www.coolxy.cn/2021/03/09/hexo-create-blog/index.html#参考)
 
 
 

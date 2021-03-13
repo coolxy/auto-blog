@@ -182,7 +182,7 @@ code:
 
 highlight:
   on: true # true开启代码高亮，开启需要关闭博客 _config.yml 中的 highlight
-  lineNum: false # true显示行号
+  lineNum: true # true显示行号
   copy: true # 复制功能
   theme: atom-light
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
@@ -265,8 +265,8 @@ gitalk:
 gitment:
   owner: coolxy
   repo: coolxy.github.io
-  client_id:
-  client_secret:
+  client_id: eded1d65c3a7dc421b72
+  client_secret: 52bb18daca0f96b49d35b2de5f8069ddf5e8bc04
   # gitment : 通过github issue实现的评论系统
   # 开源地址 : https://github.com/imsun/gitment
   # 使用说明 :

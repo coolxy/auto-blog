@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "重开博客，重启人生"
-date:   2020-06-17 02:03:25
+date:   2020-06-17 15:03:25
 categories: 生活随笔
 tags: 人生与哲学
 ---

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            python练习园地（三）——Logic篇 | Hexo
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">Hexo</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Tags</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Archives</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">About</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xxx@xxx.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-steam"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Steam</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-weibo"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Weibo</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2020/07/03/2020-07-05-coding-logic/">python练习园地（三）——Logic篇</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2020-07-03
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2021-03-02
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;<a class="category-link" href="/categories/python/">python</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        Views:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=python练习园地（三）——Logic篇&url=http://example.com/2020/07/03/2020-07-05-coding-logic/&pic=http://example.com/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=python练习园地（三）——Logic篇&url=http://example.com/2020/07/03/2020-07-05-coding-logic/&via=John Doe" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2020/07/03/2020-07-05-coding-logic/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://example.com/2020/07/03/2020-07-05-coding-logic/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com/2020/07/03/2020-07-05-coding-logic/&title=python练习园地（三）——Logic篇" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=python练习园地（三）——Logic篇&summary=&pics=http://example.com/null&url=http://example.com/2020/07/03/2020-07-05-coding-logic/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://example.com/2020/07/03/2020-07-05-coding-logic/&text=python练习园地（三）——Logic篇" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/python-codingbat/ >python codingbat</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h4 id="翻译是用百度翻译的，勉强能看明白。"><a href="#翻译是用百度翻译的，勉强能看明白。" class="headerlink" title="翻译是用百度翻译的，勉强能看明白。"></a>翻译是用百度翻译的，勉强能看明白。</h4><h2 id="Logic-1-gt-cigar-party"><a href="#Logic-1-gt-cigar-party" class="headerlink" title="Logic-1 &gt; cigar_party"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; cigar_party</h2><p>When squirrels get together for a party, they like to have cigars. A squirrel party is successful when the number of cigars is between 40 and 60, inclusive. Unless it is the weekend, in which case there is no upper bound on the number of cigars. Return True if the party with the given values is successful, or False otherwise. </p>
+<p>当松鼠聚在一起参加聚会时，他们喜欢抽雪茄。当雪茄数量在40到60支之间时，松鼠派对就成功了。除非是周末，在这种情况下，雪茄数量没有上限。如果具有给定值的参与方成功，则返回True，否则返回False。</p>
+<p>cigar_party(30, False) → False </p>
+<p>cigar_party(50, False) → True </p>
+<p>cigar_party(70, True) → True</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cigar_party</span>(<span class="params">cigars, is_weekend</span>):</span></span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> is_weekend:</span><br><span class="line">    <span class="keyword">if</span> cigars&gt;=<span class="number">40</span> <span class="keyword">and</span> cigars&lt;=<span class="number">60</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">  <span class="keyword">elif</span> cigars&gt;=<span class="number">40</span> :</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-1-gt-date-fashion"><a href="#Logic-1-gt-date-fashion" class="headerlink" title="Logic-1 &gt; date_fashion"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; date_fashion</h2><p>You and your date are trying to get a table at a restaurant. The parameter “you” is the stylishness of your clothes, in the range 0..10, and “date” is the stylishness of your date’s clothes. The result getting the table is encoded as an int value with 0=no, 1=maybe, 2=yes. If either of you is very stylish, 8 or more, then the result is 2 (yes). With the exception that if either of you has style of 2 or less, then the result is 0 (no). Otherwise the result is 1 (maybe).</p>
+<h4 id="Eg"><a href="#Eg" class="headerlink" title="Eg:"></a>Eg:</h4><p>date_fashion(5, 10) → 2 </p>
+<p>date_fashion(5, 2) → 0 </p>
+<p>date_fashion(5, 5) → 1</p>
+<p>你和你的约会对象想在餐馆找张桌子。参数“you”是你衣服的款式，在0到10的范围内，“date”是约会对象衣服的款式。得到表的结果被编码为一个int值，0=no，1=maybe，2=yes。如果你们中的任何一个非常时尚，8或更多，那么结果是2（是）。例外情况是，如果两人的样式为2或更少，则结果为0（否）。否则结果是1（可能）。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">date_fashion</span>(<span class="params">you, date</span>):</span></span><br><span class="line">  <span class="keyword">if</span> you &lt;=<span class="number">2</span> <span class="keyword">or</span> date&lt;=<span class="number">2</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">elif</span> you&gt;=<span class="number">8</span> <span class="keyword">or</span> date &gt;=<span class="number">8</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-1-gt-squirrel-play"><a href="#Logic-1-gt-squirrel-play" class="headerlink" title="Logic-1 &gt; squirrel_play"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; squirrel_play</h2><p>The squirrels in Palo Alto spend most of the day playing. In particular, they play if the temperature is between 60 and 90 (inclusive). Unless it is summer, then the upper limit is 100 instead of 90. Given an int temperature and a boolean is_summer, return True if the squirrels play and False otherwise. </p>
+<p>帕洛阿尔托的松鼠大部分时间都在玩耍。特别是，如果温度在60到90之间（包括60到90），它们就会演奏。除非是夏天，否则上限是100而不是90。给定一个int temperature和一个boolean是_summer，如果松鼠玩游戏，则返回True，否则返回False。</p>
+<p>squirrel_play(70, False) → True </p>
+<p>squirrel_play(95, False) → False </p>
+<p>squirrel_play(95, True) → True</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">squirrel_play</span>(<span class="params">temp, is_summer</span>):</span></span><br><span class="line">  <span class="keyword">if</span> is_summer :</span><br><span class="line">    <span class="keyword">if</span> <span class="number">60</span>&lt;=temp&lt;=<span class="number">100</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="number">60</span>&lt;=temp&lt;=<span class="number">90</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-1-gt-caught-speeding"><a href="#Logic-1-gt-caught-speeding" class="headerlink" title="Logic-1 &gt; caught_speeding"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; caught_speeding</h2><p>You are driving a little too fast, and a police officer stops you. Write code to compute the result, encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. If speed is 60 or less, the result is 0. If speed is between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the result is 2. Unless it is your birthday – on that day, your speed can be 5 higher in all cases. </p>
+<p>你开得太快了，警察拦住了你。编写代码来计算结果，编码为int值：0=无罚单，1=小票，2=大票。如果速度小于等于60，则结果为0。如果速度在61和80之间（包括61和80），则结果为1。如果速度为81或更高，则结果为2。除非是你的生日——在那一天，你的速度在所有情况下都可以高出5。</p>
+<p>caught_speeding(60, False) → 0</p>
+<p>caught_speeding(65, False) → 1 </p>
+<p>caught_speeding(65, True) → 0</p>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">caught_speeding</span>(<span class="params">speed, is_birthday</span>):</span></span><br><span class="line">  <span class="keyword">if</span> is_birthday:</span><br><span class="line">    flag=speed-<span class="number">5</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    flag=speed</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">if</span> flag&lt;=<span class="number">60</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">elif</span> <span class="number">61</span>&lt;=flag&lt;=<span class="number">80</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-1-gt-sorta-sum"><a href="#Logic-1-gt-sorta-sum" class="headerlink" title="Logic-1 &gt; sorta_sum"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; sorta_sum</h2><p>Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are forbidden, so in that case just return 20.</p>
+<p>给定2个整数，a和b，返回它们的和。但是，10到19范围内的和是禁止的，所以在这种情况下只返回20。</p>
+<p>sorta_sum(3, 4) → 7</p>
+<p>sorta_sum(9, 4) → 20 </p>
+<p>sorta_sum(10, 11) → 21</p>
+<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sorta_sum</span>(<span class="params">a, b</span>):</span></span><br><span class="line">  <span class="keyword">if</span> <span class="number">10</span>&lt;=(a+b)&lt;=<span class="number">20</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">20</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-1-gt-alarm-clock"><a href="#Logic-1-gt-alarm-clock" class="headerlink" title="Logic-1 &gt; alarm_clock"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; alarm_clock</h2><p>Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, …6=Sat, and a boolean indicating if we are on vacation, return a string of the form “7:00” indicating when the alarm clock should ring. Weekdays, the alarm should be “7:00” and on the weekend it should be “10:00”. Unless we are on vacation – then on weekdays it should be “10:00” and weekends it should be “off”. </p>
+<p>给定一周中编码为0=Sun，1=Mon，2=Tue，…6=Sat，以及一个表示我们是否在度假的布尔值，返回一个“7:00”格式的字符串，表示闹钟应该在什么时候响。工作日，警报应为“7:00”，周末应为“10:00”。除非我们在度假——那么在工作日应该是“10:00”，周末应该是“关闭”。</p>
+<p>alarm_clock(1, False) → ‘7:00’ </p>
+<p>alarm_clock(5, False) → ‘7:00’ </p>
+<p>alarm_clock(0, False) → ‘10:00’</p>
+<h3 id="Code-5"><a href="#Code-5" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">alarm_clock</span>(<span class="params">day, vacation</span>):</span></span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> vacation:</span><br><span class="line">    <span class="keyword">if</span> <span class="number">1</span>&lt;=day&lt;=<span class="number">5</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;7:00&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;10:00&quot;</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="number">1</span>&lt;=day&lt;=<span class="number">5</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;10:00&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;off&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-1-gt-love6"><a href="#Logic-1-gt-love6" class="headerlink" title="Logic-1 &gt; love6"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; love6</h2><p>The number 6 is a truly great number. Given two int values, a and b, return True if either one is 6. Or if their sum or difference is 6. Note: the function abs(num) computes the absolute value of a number.</p>
+<p>数字6是一个非常好的数字。给定两个整型值a和b，如果其中一个是6，则返回True。如果它们的和或差是6。注意：函数abs（num）计算一个数字的绝对值。</p>
+<p>love6(6, 4) → True<br>love6(4, 5) → False<br>love6(1, 5) → True</p>
+<h3 id="Code-6"><a href="#Code-6" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">love6</span>(<span class="params">a, b</span>):</span></span><br><span class="line">  <span class="keyword">if</span> a==<span class="number">6</span> <span class="keyword">or</span> b==<span class="number">6</span> <span class="keyword">or</span> a+b==<span class="number">6</span> <span class="keyword">or</span> <span class="built_in">abs</span>(a-b)==<span class="number">6</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-1-gt-in1to10"><a href="#Logic-1-gt-in1to10" class="headerlink" title="Logic-1 &gt; in1to10"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; in1to10</h2><p>Given a number n, return True if n is in the range 1..10, inclusive. Unless outside_mode is True, in which case return True if the number is less or equal to 1, or greater or equal to 10. </p>
+<p>in1to10(5, False) → True </p>
+<p>in1to10(11, False) → False </p>
+<p>in1to10(11, True) → True</p>
+<h3 id="Code-7"><a href="#Code-7" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">in1to10</span>(<span class="params">n, outside_mode</span>):</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">not</span> outside_mode) <span class="keyword">and</span> <span class="number">1</span>&lt;=n&lt;=<span class="number">10</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">  <span class="keyword">elif</span> outside_mode <span class="keyword">and</span> (n&lt;=<span class="number">1</span> <span class="keyword">or</span> n&gt;=<span class="number">10</span>) :</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-1-gt-near-ten"><a href="#Logic-1-gt-near-ten" class="headerlink" title="Logic-1 &gt; near_ten"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-1">Logic-1</a> &gt; near_ten</h2><p>Given a non-negative number “num”, return True if num is within 2 of a multiple of 10. Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2. See also: <a target="_blank" rel="noopener" href="https://codingbat.com/doc/practice/mod-introduction.html">Introduction to Mod</a> </p>
+<p>near_ten(12) → True </p>
+<p>near_ten(17) → False </p>
+<p>near_ten(19) → True</p>
+<h3 id="Code-8"><a href="#Code-8" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">near_ten</span>(<span class="params">num</span>):</span></span><br><span class="line">  <span class="keyword">if</span> num%<span class="number">10</span>&lt;=<span class="number">2</span> <span class="keyword">or</span> <span class="number">10</span>-num%<span class="number">10</span>&lt;=<span class="number">2</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-2-gt-make-bricks"><a href="#Logic-2-gt-make-bricks" class="headerlink" title="Logic-2 &gt; make_bricks"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-2">Logic-2</a> &gt; make_bricks</h2><p>We want to make a row of bricks that is <strong>goal</strong> inches long. We have a number of small bricks (1 inch each) and big bricks (5 inches each). Return True if it is possible to make the goal by choosing from the given bricks. This is a little harder than it looks and can be done without any loops. See also: <a target="_blank" rel="noopener" href="https://codingbat.com/doc/practice/makebricks-introduction.html">Introduction to MakeBricks</a> </p>
+<p>我们要砌一排目标长度的砖墙。我们有一些小砖块（每个1英寸）和大砖块（每个5英寸）。如果可以通过从给定的砖块中砌到目标长度，则返回True。这比看起来要难一点，而且不需要任何循环就可以完成。另请参见：MakeBricks简介</p>
+<p>make_bricks(3, 1, 8) → True </p>
+<p>make_bricks(3, 1, 9) → False </p>
+<p>make_bricks(3, 2, 10) → True</p>
+<h3 id="Code（已用上循环）"><a href="#Code（已用上循环）" class="headerlink" title="Code（已用上循环）:"></a>Code（已用上循环）:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_bricks</span>(<span class="params">small, big, goal</span>):</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(big+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">if</span> i*<span class="number">5</span>&lt;=goal <span class="keyword">and</span> goal-i*<span class="number">5</span>&lt;=small:</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-2-gt-lone-sum"><a href="#Logic-2-gt-lone-sum" class="headerlink" title="Logic-2 &gt; lone_sum"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-2">Logic-2</a> &gt; lone_sum</h2><p>Given 3 int values, a b c, return their sum. However, if one of the values is the same as another of the values, it does not count towards the sum. </p>
+<p>给定3个int值，a b c，返回它们的和。但是，如果其中一个值与另一个值相同，则相同的数不计入总和。</p>
+<p>lone_sum(1, 2, 3) → 6<br>lone_sum(3, 2, 3) → 2<br>lone_sum(3, 3, 3) → 0</p>
+<h3 id="Code-9"><a href="#Code-9" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lone_sum</span>(<span class="params">a, b, c</span>):</span></span><br><span class="line">  <span class="keyword">if</span> a==b==c:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">elif</span> a==b:</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line">  <span class="keyword">elif</span> a==c:</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">  <span class="keyword">elif</span> b==c:</span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> a+b+c</span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-2-gt-lucky-sum"><a href="#Logic-2-gt-lucky-sum" class="headerlink" title="Logic-2 &gt; lucky_sum"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-2">Logic-2</a> &gt; lucky_sum</h2><p>Given 3 int values, a b c, return their sum. However, if one of the values is 13 then it does not count towards the sum and values to its right do not count. So for example, if b is 13, then both b and c do not count.</p>
+<p>给定3个int值，a b c，返回它们的和。但是，如果其中一个值是13，则它不计入总和，其右侧的值也不计入。例如，如果b是13，那么b和c都不算数。</p>
+<p>lucky_sum(1, 2, 3) → 6<br>lucky_sum(1, 2, 13) → 3<br>lucky_sum(1, 13, 3) → 1</p>
+<h3 id="Code1"><a href="#Code1" class="headerlink" title="Code1:"></a>Code1:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lucky_sum</span>(<span class="params">a, b, c</span>):</span></span><br><span class="line">  <span class="keyword">if</span> a==<span class="number">13</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">elif</span> b==<span class="number">13</span>:</span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line">  <span class="keyword">elif</span> c==<span class="number">13</span>:</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> a+b+c</span><br></pre></td></tr></table></figure>
+
+<h3 id="Code2"><a href="#Code2" class="headerlink" title="Code2:"></a>Code2:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lucky_sum</span>(<span class="params">a, b, c</span>):</span></span><br><span class="line">  <span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line">  sum_list=[a,b,c]</span><br><span class="line">  <span class="keyword">for</span> each <span class="keyword">in</span> sum_list:</span><br><span class="line">    <span class="keyword">if</span> each ==<span class="number">13</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="built_in">sum</span>+=each</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">sum</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-2-gt-no-teen-sum"><a href="#Logic-2-gt-no-teen-sum" class="headerlink" title="Logic-2 &gt; no_teen_sum"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-2">Logic-2</a> &gt; no_teen_sum</h2><p>Given 3 int values, a b c, return their sum. However, if any of the values is a teen – in the range 13..19 inclusive – then that value counts as 0, except 15 and 16 do not count as a teens. Write a separate helper “def fix_teen(n):”that takes in an int value and returns that value fixed for the teen rule. In this way, you avoid repeating the teen code 3 times (i.e. “decomposition”). Define the helper below and at the same indent level as the main no_teen_sum().</p>
+<p>给定3个int值，a b c，返回它们的和。但是，如果其中任何一个值是青少年——范围在13到19之间——那么这个值就计为0，除了15和16不算青少年。编写一个单独的helper“def fix_teen（n）：”，它接受一个int值并返回为teen规则固定的值。这样，你就可以避免重复青少年代码3次（即“分解”）。在下面定义与主no_teen_sum（）相同缩进级别的助手。</p>
+<p>no_teen_sum(1, 2, 3) → 6<br>no_teen_sum(2, 13, 1) → 3<br>no_teen_sum(2, 1, 14) → 3</p>
+<h3 id="Code-10"><a href="#Code-10" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fix_teen</span>(<span class="params">n</span>):</span></span><br><span class="line">  <span class="keyword">if</span> <span class="number">13</span>&lt;=n&lt;<span class="number">15</span> <span class="keyword">or</span> <span class="number">16</span>&lt;n&lt;=<span class="number">19</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">no_teen_sum</span>(<span class="params">a, b, c</span>):</span></span><br><span class="line">  <span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> (a,b,c):</span><br><span class="line">    x=fix_teen(n)</span><br><span class="line">    <span class="built_in">sum</span>+=x</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">sum</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-2-gt-round-sum"><a href="#Logic-2-gt-round-sum" class="headerlink" title="Logic-2 &gt; round_sum"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-2">Logic-2</a> &gt; round_sum</h2><p>For this problem, we’ll round an int value up to the next multiple of 10 if its rightmost digit is 5 or more, so 15 rounds up to 20. Alternately, round down to the previous multiple of 10 if its rightmost digit is less than 5, so 12 rounds down to 10. Given 3 ints, a b c, return the sum of their rounded values. To avoid code repetition, write a separate helper “def round10(num):” and call it 3 times. Write the helper entirely below and at the same indent level as round_sum().</p>
+<p>对于这个问题，如果一个int值最(个位)是5或更多，我们将它舍入到下一个10的倍数，所以15向上舍入到20。如果前一个数字小于10，则交替向下舍入前10位。给定3个整数，a b c，返回它们的四舍五入值之和。为了避免代码重复，编写一个单独的助手（函数）“def round10（num）：”并调用它3次。将助手写在与round_sum（）完全相同的缩进级别下。</p>
+<p>round_sum(16, 17, 18) → 60<br>round_sum(12, 13, 14) → 30<br>round_sum(6, 4, 4) → 10</p>
+<h3 id="Code："><a href="#Code：" class="headerlink" title="Code："></a>Code：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">round10</span>(<span class="params">num</span>):</span></span><br><span class="line">  <span class="keyword">if</span> num%<span class="number">10</span>&gt;=<span class="number">5</span>:</span><br><span class="line">    <span class="keyword">return</span> (num//<span class="number">10</span>+<span class="number">1</span>)*<span class="number">10</span>	<span class="comment">#// 为商取整</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> num//<span class="number">10</span>*<span class="number">10</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">round_sum</span>(<span class="params">a, b, c</span>):</span></span><br><span class="line">  s=<span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> (a,b,c):</span><br><span class="line">    r10=round10(i)</span><br><span class="line">    s+=r10</span><br><span class="line">  <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
+
+<h2 id="Logic-2-gt-close-far"><a href="#Logic-2-gt-close-far" class="headerlink" title="Logic-2 &gt; close_far"></a><a target="_blank" rel="noopener" href="https://codingbat.com/python/Logic-2">Logic-2</a> &gt; close_far</h2><p>Given three ints, a b c, return True if one of b or c is “close” (differing from a by at most 1), while the other is “far”, differing from both other values by 2 or more. Note: abs(num) computes the absolute value of a number.</p>
+<p>给定三个整数，a b c，如果b或c中的一个是“close”（与a相差最多1），而另一个是“far”，则返回True，与其他两个值相差2或更多则不同（返回False )。注意：abs（num）计算数字的绝对值。</p>
+<p>close_far(1, 2, 10) → True<br>close_far(1, 2, 3) → False<br>close_far(4, 1, 3) → True</p>
+<h3 id="Code-11"><a href="#Code-11" class="headerlink" title="Code:"></a>Code:</h3>
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2020/07/29/2020-07-28-soft-Keys/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>精心收集的软件激活密钥</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2020/07/02/2020-07-01-codingbat-string/">
+        <span>python练习园地（二）——string篇</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2020/07/03/2020-07-05-coding-logic/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BF%BB%E8%AF%91%E6%98%AF%E7%94%A8%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91%E7%9A%84%EF%BC%8C%E5%8B%89%E5%BC%BA%E8%83%BD%E7%9C%8B%E6%98%8E%E7%99%BD%E3%80%82"><span class="toc-number">1.</span> <span class="toc-text">翻译是用百度翻译的，勉强能看明白。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-cigar-party"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; cigar_party</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-date-fashion"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; date_fashion</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Eg"><span class="toc-number">1.</span> <span class="toc-text">Eg:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-1"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-squirrel-play"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; squirrel_play</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-2"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-caught-speeding"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; caught_speeding</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-3"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-sorta-sum"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; sorta_sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-4"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-alarm-clock"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; alarm_clock</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-5"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-love6"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; love6</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-6"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-in1to10"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; in1to10</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-7"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-1-gt-near-ten"><span class="toc-number"></span> <span class="toc-text">Logic-1 &gt; near_ten</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-8"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-2-gt-make-bricks"><span class="toc-number"></span> <span class="toc-text">Logic-2 &gt; make_bricks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code%EF%BC%88%E5%B7%B2%E7%94%A8%E4%B8%8A%E5%BE%AA%E7%8E%AF%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">Code（已用上循环）:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-2-gt-lone-sum"><span class="toc-number"></span> <span class="toc-text">Logic-2 &gt; lone_sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-9"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-2-gt-lucky-sum"><span class="toc-number"></span> <span class="toc-text">Logic-2 &gt; lucky_sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code1"><span class="toc-number"></span> <span class="toc-text">Code1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code2"><span class="toc-number"></span> <span class="toc-text">Code2:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-2-gt-no-teen-sum"><span class="toc-number"></span> <span class="toc-text">Logic-2 &gt; no_teen_sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-10"><span class="toc-number"></span> <span class="toc-text">Code:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-2-gt-round-sum"><span class="toc-number"></span> <span class="toc-text">Logic-2 &gt; round_sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">Code：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Logic-2-gt-close-far"><span class="toc-number"></span> <span class="toc-text">Logic-2 &gt; close_far</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-11"><span class="toc-number"></span> <span class="toc-text">Code:</span></a>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        John Doe
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
