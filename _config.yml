@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: coolxy
-subtitle: 
+title: 长鸿的博客
+subtitle: coolxy
 description: ''
 keywords:
 author: coolxy
@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://www.coolxy.cn
+url: https://www.coolxy.cn
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
