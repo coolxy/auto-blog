@@ -121,10 +121,21 @@ Eg:`ssh -p 222 root@abc.cn`
 
 ### 其他命令
 - 创建连接ln：  
-`ln -op old_path new_path`  
--op: -s  为软连接  
+  `ln -op old_path new_path`  
+  -op: -s  为软连接  
+
+- 批量创建连接：
+
+  1.使用ln命令
+
+  <span style="font-size:18px;">ln -s /tmp/*.log /tmp/lnk/</span>
+
+  2.使用cp命令的参数rs
+  <span style="font-size:18px;">cp -rs /tmp/*.log /tmp/lnk/</span>
+
 - tar解压：  
-`tar zxvf file.tar.gz`  
+  `tar zxvf file.tar.gz`  
+
 - tar压缩打包：  
 `tar zcvf file.tar.gz path(dir/files)`  
 OP：-c 建立压缩文件  
@@ -155,7 +166,7 @@ unzip zip_file.zip
 
 #### 3.1.2 deepin访问win10共享
 
-
+* win10设置共享：自行设置
 
 ### 3.2 创建桌面及开始菜单快捷方式
 
