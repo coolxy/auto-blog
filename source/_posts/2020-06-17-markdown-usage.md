@@ -4,6 +4,7 @@ title:  "Markdown使用方法"
 date:   2020-06-17 22:03:25
 categories: 
   - 教程技巧
+  - markdown
 ---
 # MarkDown使用方法  
 Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。  
@@ -69,7 +70,6 @@ ___
 > ### 3.6 脚注  
 > 长鸿的博客 ^^coolxy^^
 > 
-
 
 ***
 
