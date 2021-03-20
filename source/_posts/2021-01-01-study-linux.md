@@ -35,7 +35,7 @@ limux：利用dd命令
 |/home/user/.config|程序的配置文件目录|
 |/lib/|系统调用函数库保存位置|
 |/lost+found/|当系统意外崩溃或机器意外关机，而产生一些文件碎片放在此目录下。|
-|/media/|/mnt/
+|/media/|/mnt/|
 |/misc/|挂载目录|
 |/opt/|第三方安装软件的保存位置。|
 |/proc/|虚拟文件系统，该目录中的数据并不保存在硬盘，而是保存在内存中。主要保存系统的内核，进程，外部设备状态和网络状态。|
@@ -52,19 +52,101 @@ limux：利用dd命令
 运行命令，不加入路径指在当前目录下操作，加入路径就在路径上操作。  
 ###  2.1系统管理相关命令
 - 以管理员运行：  
-`sudo commond`  
+  `sudo commond`  
+
+- 修改密码passwd：
+ `# passwd user`  
+ 不加user则是修改root密码
+
+- useradd命令增加用户  
+`useradd [选项] 用户名`
+
+默认的用户家目录会被存放在/home目录中，默认的Shell解释器为/bin/bash，而且默认会创建一个与该用户同名的基本用户组。这些默认设置可以根据useradd命令参数自行修改
+
+useradd命令中的用户参数以及作用
+
+|参数|	作用|
+|----|:----|
+|-d	|指定用户的家目录（默认为/home/username）|
+|-e|	账户的到期时间，格式为YYYY-MM-DD.|
+|-u	|指定该用户的默认UID|
+|-g|	指定一个初始的用户基本组（必须已存在）|
+|-G	|指定一个或多个扩展用户组|
+|-N	|不创建与用户同名的基本用户组|
+|-s	|指定该用户的默认Shell解释器|
+
+- groupadd命令增加用户组
+
+“groupadd [选项] 群组名”
+
+- 关机shutdown:  
+shutdown -f [time]  #now
+
+- 重启reboot: 
+`# reboot`
+
+- 关闭系统：  
+`# poweroff`
+
 - 安装软件：  
-`sudo apt-get install SoftName`  
+  `sudo apt-get install SoftName`  
+
 - 卸载软件：  
-`sudo apt remove SoftName`
-- 查看系统信息  
-`uname -a`
+  `sudo apt remove SoftName`
+
+- 查看系统信息：  
+  `uname -a` 
+
+- 安装查询软件：sudo apt install neofetch screenfetch
+- -终端查询命令：neofetch 或 screenfetch
+3 常用命令还有：
+4 uname -a #查询内核版本
+5 cat /proc/cpuinfo #查询CPU信息
+6 hostname #查看计算机名
+7 lspci #列出所有PCI设备
+8 lsusb #列出所有USB设备
+9 lsmod #列出加载的内核模块
+10 env #查看环境变量资源
+11 free -m #查看内存使用量和交换区使用量
+12 df -h #查看各分区使用情况
+13 ifconfig #查看网络接口属性，需 sudo apt install net-tools 或 ip address
+14 route -n #查看路由表，或 ip route
+
+- ps查看系统进程：
+ps [参数]
+|参数	|作用|
+|:----:|:----|
+|-a	|显示所有进程（包括其他用户的进程）|
+|-u	|用户以及其他详细信息|
+|-x|	显示没有控制终端的进程|
+
 - *.deb二进制包安装/卸载：  
-安装：`dpkg -i *.deb`  
-卸载：`sudo dpkg -r xxSoftName`  
+  安装：`dpkg -i *.deb`  
+  卸载：`sudo dpkg -r xxSoftName`  
+
 - find查找文件  
-`find path -name 'file'`  
-Eg:`find / -name like.txt`    在'/'目录下查找'like.txt'文件，可用'*'、'?'通配符    
+  `find path -name 'file'`  
+  Eg:`find / -name like.txt`    在'/'目录下查找'like.txt'文件，可用'*'、'?'通配符    
+
+- 开启SSH远程登陆
+
+  为安全故，Linux默认是关闭远程登陆的
+
+  sudo vim /etc/ssh/sshd_config
+
+  将38行：PermitRootLogin  no  改为：PermitRootLogin yes
+
+  将115行：UseDNS no  改为：UseDNS yes  省略DNS验证。
+
+  重启SSH:
+
+  service sshd restart
+
+  或者：
+
+  /etc/initd.d/sshd restart
+- 
+  
 
 
 
@@ -97,18 +179,28 @@ cat file
 
 ### 2.3 权限操作命令：  
 - chown设置文件/目录拥有者：  
-`chown user path(dir/files)`  
+  `chown user path(dir/files)`  
+
 - chmod设置文件目录权限：  
-`chmod -R 777 path(dir/file)`  
-这里的777是权限（详见权限章节）  
+  `chmod -R 777 path(dir/file)`  
+  这里的777是权限：r=4、w=2、x=1、无权限=0
+
+  **属主：rwx=4+2+1=7**
+
+  **属组：r-x=4+0+1=5**
+
+  **其他：---=0+0+0=0**
 
 ### 2.4 网络操作命令  
-* 2.4.1 ssh 终端远程连接：  
+* ssh 终端远程连接：  
 `ssh -p [port] user@[ip or URL]`  
 Eg:`ssh -p 222 root@abc.cn`
 
-* 2.4.2 查看本机ip地址  
+*  查看本机ip地址  
 `ifconfig -a`
+
+* 下载网络文件wget：  
+`wget url`
 
 * 修改IP地址（Ubuntu）  
 方法一：修改网络配置文件：  
@@ -116,45 +208,83 @@ Eg:`ssh -p 222 root@abc.cn`
 
 * 重启网络服务：  
   \# /etc/init.d/networking restart
+  
+* SSH命令传输文件
+  
+  一般用scp命令传输文件。
+  
+  1、从服务器上下载文件
+  
+  scp username@servername:/path/filename /localhost/file
+  
+  Eg:
+  
+  scp root@192.168.1.3:/home/mysql.tar.gz /home/root/
+  
+  2、上传本地文件到服务器
+  
+  scp /path/filename username@servername:/path/filename
+  
+  3、从服务器下载整个目录
+  scp -r username@servername:/（远程目录） /（本地目录）
+  
+  例如:scp -r root@192.168.0.101:/var/www/test /var/www/  
+  
+  4、上传目录到服务器
+  scp -r local_dir username@servername:remote_dir
+  例如：scp -r test  root@192.168.0.101:/var/www/  把当前目录下的test目录上传到服务器的/var/www/ 目录
 
 
 
-### 其他命令
+### 2.5 其他命令
 - 创建连接ln：  
   `ln -op old_path new_path`  
   -op: -s  为软连接  
 
-- 批量创建连接：
+- 批量创建连接：  
+  1.使用ln命令  
+<span style="font-size:18px;">ln -s /tmp/*.log /tmp/lnk/</span>
 
-  1.使用ln命令
-
-  <span style="font-size:18px;">ln -s /tmp/*.log /tmp/lnk/</span>
-
-  2.使用cp命令的参数rs
+  2.使用cp命令的参数-rs
   <span style="font-size:18px;">cp -rs /tmp/*.log /tmp/lnk/</span>
 
 - tar解压：  
   `tar zxvf file.tar.gz`  
 
 - tar压缩打包：  
-`tar zcvf file.tar.gz path(dir/files)`  
+` tar zcvf file.tar.gz path(dir/files)`  
 OP：-c 建立压缩文件  
--x 解开压缩包  
--z 具有gzip属性？  
--j 同时具有bzip属性？  
--f 使用档名，后立即接档名  
+\-x 解开压缩包  
+\-z 具有gzip属性？  
+\-j 同时具有bzip属性？  
+\-f 使用档名，后立即接档名  
 * zip/unzip命令  
 zip -r zip_file.zip FilesDir  
 unzip zip_file.zip  
--r 递归处理，将指定目录下所有文件和子目录一并处理  
+\-r 递归处理，将指定目录下所有文件和子目录一并处理  
 
   
 
 
 ## 第三章 deepin桌面配置
-### 3.1 win10与deepin之间共享访问
+## 3.1 系统配置
+### 3.1.1 修改主机名 
+`sudo vim /etc/hostname` 
+`sudo vim /etc/hosts`  
 
-#### 3.1.1 windows与Linux之间的共享，需要samba组件支持，连接通道，所以windows与Linux都要安装samba组件。
+### 3.1.2 修改用户名：  
+`sudo vi /etc/passwd`  
+找到原先的用户名，将其改为自己的用户名
+`sudo  vi /etc/shadow`   
+ 找到原先用户名（所有的名字都要改），改为自己的用户名
+ 
+
+
+### 3.2 win10与deepin之间共享访问
+
+#### 3.2.1 组件支持
+
+windows与Linux之间的共享，需要samba组件支持，连接通道，所以windows与Linux都要安装samba组件。
 
 * windows安装：
 
@@ -164,11 +294,51 @@ unzip zip_file.zip
 
   sudo apt-get install samba
 
-#### 3.1.2 deepin访问win10共享
+#### 3.2.2 deepin访问win10共享
 
-* win10设置共享：自行设置
+* win10设置共享：自行设置（有的设置共享后无法访问，那是要在权限中授权）
+* 
 
-### 3.2 创建桌面及开始菜单快捷方式
+#### 3.2.3 win10访问deepin共享
+
+* 1. 设置共享目录  
+> 右键->共享，并设置777权限，如：我的共享目录为：/home/share
+> sudo chmod -r 777 /home/share
+> 修改samba配置文件
+
+sudo vim /etc/samba/smb.conf
+在smb.conf文件最后加上以下内容
+```
+[share]   #共享名
+path = /home/share  #共享路径
+public = yes
+writable = yes
+valid users = name  #访问用户名
+create mask = 0644  #权限，win访问时的登陆用户名
+force create mode = 0644
+directory mask = 0755  #目录权限
+force directory mode = 0755
+available = yes
+```
+
+2. 设置登录密码  
+`sudo touch /etc/samba/smbpasswd` 
+
+`sudo smbpasswd -a name`#新增网络访问的用户名
+输入两次密码后，会提示 Added user name. 表示设置成功
+
+重新启动samba服务器  
+`sudo /etc/init.d/samba restart`
+ 测试是否共享成功  
+安装samba的linux客户端：
+sudo apt-get install smbclient   
+smbclient -L //localhost/share  
+如果出现让你输入密码的界面，那么就是设置成功了，输入之前设置的密码即可以看到共享的内容了。
+3.在windows上测试  
+打开windows文件管理器，输入 \\ip地址或主机名\share  
+
+
+### 3.3 创建桌面及开始菜单快捷方式
 
 开始菜单路径：/usr/share/applications
 
@@ -192,14 +362,16 @@ Categories=Utility;FileTools;
 StartupNotify=true
 ```
 
-### 3.3 
-#### 3.3.1 设置定时关机
+### 3.4 任务栏看不到（托盘看不到解决方法）
+killall dde-dock  
+
+### 3.5 设置定时关机
 编辑/etc/crontab:添加一条命令：  
 `vim /etc/crontab`  
 `15 18 * * * root /sbin/shutdown -h now`  
 即可实现每天18:15关机。
 
-### 3.4
+### 3.6 
 
 
 
@@ -224,8 +396,8 @@ StartupNotify=true
 
 * ISO文件的挂载：  
 要使用ISO文件，只需要把该ISO文件挂载到系统的某个空目录即可，比如：  
-#mkdir /mnt/iso
-#mount -o loop filename.iso /mnt/iso   
+#mkdir /mnt/iso  
+#mount -o loop filename.iso /mnt/iso      
 上述命令会把ISO文件filename.iso挂载到/mnt/iso目录里，访问 /mnt/iso目录即是访问ISO文件里的内容。
 
 * ISO镜像文件的卸载：  
@@ -236,4 +408,10 @@ StartupNotify=true
 首先安装 Furius ISO Mount，Ubuntu 用户可在 Ubuntu 软件中心搜索安装，或者在终端中输入sudo apt-get install furiusisomount。其他 Linux 发行版请使用相应软件包管理器安装或自行编译安装。
 注：由于权限问题，部分发行版（Ubuntu 用户无需进行此操作）可能需要将用户添加到 fuse 组，执行sudo adduser username fuse即可。
 
+### 4.2 firefox 更新（deepin20）：
+```
+tar zxvf firefox.tr.gz 
+cd firefox  
+sudo cp -r * /opt/apps/com.mozilla.firefox-zh/files
+```
 ## 第五章 各类技巧
